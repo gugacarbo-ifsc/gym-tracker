@@ -47,9 +47,9 @@ export const down = [
 ];
 
 async function up(db: D1Database) {
-  upSQLStatements.forEach(async (sql) => {
+  return upSQLStatements.map(async (sql) => {
     try {
-      await db.prepare(sql).run();
+      return db.prepare(sql).run();
     } catch (e: unknown) {
       if (e instanceof Error) console.error(e.message, e);
     }
