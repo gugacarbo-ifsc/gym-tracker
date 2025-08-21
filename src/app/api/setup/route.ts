@@ -11,5 +11,6 @@ export async function GET() {
       console.log(causeMessage, e.message);
     }
   }
+  
   return new Response("Migration completed");
 }
