@@ -1,5 +1,5 @@
-import { up } from "@auth/d1-adapter";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
+import { up } from "./up";
 
 export async function GET() {
   try {
