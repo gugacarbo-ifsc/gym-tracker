@@ -1,9 +1,14 @@
 import { getCloudflareContext } from "@opennextjs/cloudflare";
-import { up } from "./up";
+import { drizzle } from "drizzle-orm/libsql";
 
 export async function GET() {
   try {
-    await up((await getCloudflareContext({ async: true })).env.DB);
+    const db = drizzle(
+      (await getCloudflareContext({ async: true })).env.DB as any
+    );
+
+    const result = await db.select().from(users).all();
+    return Response.json(result);
   } catch (e: unknown) {
     if (e instanceof Error) {
       const causeMessage =

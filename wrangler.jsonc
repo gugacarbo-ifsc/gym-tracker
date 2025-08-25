@@ -19,7 +19,8 @@
     {
       "binding": "DB",
       "database_name": "gym-tracker",
-      "database_id": "8b60b7eb-1a8b-46c1-81a1-fb8db816fa21"
+      "database_id": "8b60b7eb-1a8b-46c1-81a1-fb8db816fa21",
+      "migrations_dir": "drizzle/migrations"
     }
   ]
   /**
